@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'slider';
+  // monthlyAmount=[5];
+  monthlyAmount=[5,10,20,30,40,50,55];
+  sliderValueChange(value: number) {
+    console.log(value)
+  }
 }

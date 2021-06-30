@@ -1,0 +1,23 @@
+<div *ngIf="ticks.length">
+    <div id="container" #sliderContainer>
+        <div class="slider-thumb-container" id="sliderLabel" [class.center]="oneTick" #sliderLabel>
+            <div class="slider-thumb-label">
+                <div class="slider-thumb-label-text">{{displayValue}}</div>
+            </div>
+            <div class="slider-thumb-pointer"></div>
+        </div>
+    </div>
+    <div id="slider-track-wrapper">
+        <div class="slider-track">
+            <div class="slider-track-background"></div>
+            <div class="slider-ticks-container" id="slider-container">
+                <ng-container *ngIf="ticks.length>1">
+                    <span class="slider-ticks" *ngFor="let tick of ticks; index as i" [style.marginRight.px]="dotMargin" [id]="'ticks'+i"></span>
+                </ng-container>
+                <ng-container *ngIf="ticks.length===1">
+                    <span class="slider-ticks slider-ticks-unique" [id]="'ticks1'"></span>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>
